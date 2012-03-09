@@ -10,6 +10,10 @@ gem 'nokogiri'
 gem 'soundcloud'
 
 
+group :test do
+  gem 'annotate'
+end
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
