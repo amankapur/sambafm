@@ -6,6 +6,9 @@ gem 'devise'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'mailcatcher'
+gem 'nokogiri'
+gem 'soundcloud'
+
 
 
 # Bundle edge Rails instead:

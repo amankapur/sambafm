@@ -1,0 +1,60 @@
+<h1> WELCOME TO SAMBA!!! </h1>
+
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th> soundcloud ID </th>
+    <th>Title</th>
+    <th> PLAY ME!!!!!</th>
+  </tr>
+
+<% @songs.each do |song| %>
+  <tr>
+    <td id='id'><%= song.id %></td>
+    <td id='soundcloudid'><%= song.songid %></td>
+    <td><%= song.title %></td>
+    <td><button id="PLAY" onclick=" var id = $(this).parent().prev().prev().text(); 
+                                    SC.whenStreamingReady(function(){
+                                    var soundObj = SC.stream(id);
+                                    soundObj.play(); });" >  PLAY  </button></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+
+<script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
+<script type="text/JavaScript">
+ $(document).ready(function(){
+  SC.initialize({
+    client_id: "e17759e5c8406ad73b8b1a38504f17b3"
+    });
+ 
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
