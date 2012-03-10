@@ -1,0 +1,6 @@
+<% if current_user.likes_song?(song) %>
+  <% @locals = { song: song } %>
+  <%= render partial: 'shared/unlike', locals: { song: song } %>
+<% else %>
+  <%= render partial: 'shared/like', locals: { song: song }%>
+<% end %>

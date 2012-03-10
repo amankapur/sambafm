@@ -1,7 +1,8 @@
-<h1> WELCOME TO SAMBA!!! </h1>
+<h1>Song Discovery</h1>
 
 <table border="1">
   <tr>
+    <th>Like</th>
     <th>Id</th>
     <th> soundcloud ID </th>
     <th>Title</th>
@@ -9,11 +10,12 @@
   </tr>
 
 <% @songs.each do |song| %>
-  <tr>
+  <tr class="song_row" id="<%= song.id %>">
+    <td class="like_form"><%= render partial: 'shared/like_form', locals: { song: song } %></td>
     <td id='id'><%= song.id %></td>
     <td id='soundcloudid'><%= song.songid %></td>
     <td><%= song.title %></td>
-    <td><button id="PLAY" onclick=" var id = $(this).parent().prev().prev().text(); 
+    <td><button id="PLAY" onclick=" var id = $(this).parent().prev().prev().text();
                                     SC.whenStreamingReady(function(){
                                     var soundObj = SC.stream(id);
                                     soundObj.play(); });" >  PLAY  </button></td>
@@ -32,7 +34,7 @@
   SC.initialize({
     client_id: "e17759e5c8406ad73b8b1a38504f17b3"
     });
- 
+
   });
 </script>
 

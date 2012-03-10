@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310182407) do
+ActiveRecord::Schema.define(:version => 20120310185048) do
 
-  create_table "relationships", :force => true do |t|
-    t.integer  "liker"
-    t.integer  "song_liked"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "song_relationships", :force => true do |t|
+    t.integer  "liker_id"
+    t.integer  "liked_song_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  add_index "relationships", ["liker"], :name => "index_relationships_on_liker"
-  add_index "relationships", ["song_liked", "liker"], :name => "index_relationships_on_song_liked_and_liker", :unique => true
-  add_index "relationships", ["song_liked"], :name => "index_relationships_on_song_liked"
+  add_index "song_relationships", ["liked_song_id", "liker_id"], :name => "index_relationships_on_song_liked_and_liker", :unique => true
+  add_index "song_relationships", ["liked_song_id"], :name => "index_relationships_on_song_liked"
+  add_index "song_relationships", ["liker_id"], :name => "index_relationships_on_liker"
 
   create_table "songs", :force => true do |t|
     t.string   "title"

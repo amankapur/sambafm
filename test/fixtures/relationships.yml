@@ -11,10 +11,10 @@ two:
 #
 # Table name: relationships
 #
-#  id         :integer         not null, primary key
-#  liker      :integer
-#  song_liked :integer
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  id            :integer         not null, primary key
+#  liker_id      :integer
+#  liked_song_id :integer
+#  created_at    :datetime        not null
+#  updated_at    :datetime        not null
 #
 

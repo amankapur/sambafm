@@ -1,4 +1,10 @@
 class Song < ActiveRecord::Base
+  attr_accessible :title, :artist, :length, :id
+
+  validates :title, :presence => true, :uniqueness => { :case_sensitive => false }
+  validates :artist, presence: true
+  has_many :song_relationships, foreign_key: "liked_song_id", dependent: :destroy
+  has_many :likers, through: :song_relationships
 end
 # == Schema Information
 #

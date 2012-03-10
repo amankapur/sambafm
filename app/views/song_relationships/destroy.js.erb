@@ -1,0 +1,2 @@
+$("#<%= @song.id %>").find(".like_form").html("<%= escape_javascript(
+                                   render partial: 'shared/like', locals: { song: @song }) %>")

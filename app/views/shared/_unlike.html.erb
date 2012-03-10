@@ -1,0 +1,4 @@
+<%= form_for current_user.song_relationships.find_by_liked_song_id(song.id),
+  html: { method: :delete }, remote: true do |f| %>
+    <div class="actions"><%= f.submit "Unlike" %></div>
+<% end %>

@@ -4,8 +4,24 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable
 
+  has_many :song_relationships, foreign_key: "liker_id", dependent: :destroy
+  has_many :liked_songs, through: :song_relationships
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+
+  def likes_song?(song)
+    self.song_relationships.find_by_liked_song_id(song.id)
+  end
+
+  def like_song!(song)
+    self.song_relationships.create!(liked_song_id: song.id)
+  end
+
+  def unlike_song!(song)
+    self.song_relationships.find_by_liked_song_id(song.id).destroy
+  end
+
 end
 # == Schema Information
 #
