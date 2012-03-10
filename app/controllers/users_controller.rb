@@ -4,4 +4,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def library
+    @user = User.find(params[:id])
+    @songs = @user.liked_songs
+  end
 end

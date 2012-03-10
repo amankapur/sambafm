@@ -9,7 +9,6 @@ gem 'mailcatcher'
 gem 'nokogiri'
 gem 'soundcloud'
 
-
 group :test do
   gem 'annotate'
 end

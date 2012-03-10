@@ -1,0 +1,21 @@
+<table border="1">
+  <%= render 'shared/header' %>
+  <% songs.each do |song| %>
+    <%= render partial: 'songs/song', locals: { song: song } %>
+  <% end %>
+</table>
+<br />
+
+
+
+
+
+<script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
+<script type="text/JavaScript">
+ $(document).ready(function(){
+  SC.initialize({
+    client_id: "e17759e5c8406ad73b8b1a38504f17b3"
+    });
+
+  });
+</script>

@@ -7,6 +7,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <header class="navbar navbar-fixed-top">
+    <div class=navbar-inner">
+      <div class="container">
+        <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", root_path, id: "logo" %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Library", library_user_path(current_user), id: "library" %></li>
+          <% end %>
+        </ul>
+        </nav>
+      </div>
+    </div>
+    </header>
     <div class="container">
       <section class="round">
       <% flash.each do |k, v| %>

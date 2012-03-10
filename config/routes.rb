@@ -2,6 +2,11 @@ SambaFm::Application.routes.draw do
   devise_for :users
 
   resources :song_relationships, only: [:create, :destroy]
+  resources :users do
+    member do
+      get :library
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
