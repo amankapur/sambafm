@@ -1,5 +1,5 @@
 class Song < ActiveRecord::Base
-  attr_accessible :title, :artist, :length, :id
+  attr_accessible :title, :artist, :length, :id, :songid, :description
 
   validates :title, :presence => true, :uniqueness => { :case_sensitive => false }
   validates :artist, presence: true
