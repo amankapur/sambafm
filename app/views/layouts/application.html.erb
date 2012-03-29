@@ -14,7 +14,7 @@
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path, id: "logo" %></li>
           <% if user_signed_in? %>
-            <li><%= link_to "Library", library_user_path(current_user), id: "library" %></li>
+            <li><%= link_to "Library", library_user_path(current_user), id: "library_link" %></li>
           <% end %>
         </ul>
         </nav>
