@@ -11,7 +11,9 @@ class SongRelationshipsController < ApplicationController
   end
 
   def destroy
-    @song = SongRelationship.find(params[:id]).liked_song
+    @relationship = SongRelationship.find(params[:id])
+    @song = @relationship.liked_song
+    @songs = current_user.liked_songs
     current_user.unlike_song!(@song)
     respond_to do |format|
       format.html { redirect_to @song }

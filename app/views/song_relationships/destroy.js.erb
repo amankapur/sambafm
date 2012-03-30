@@ -1,2 +1,9 @@
-$("#<%= @song.id %>").find(".like_form").html("<%= escape_javascript(
-                                   render partial: 'shared/like', locals: { song: @song }) %>")
+var my_lib = $("#library");
+if (my_lib.length > 0) {
+  my_lib.html("<%= escape_javascript(
+    render partial: 'shared/song_table', locals: { songs: @songs }) %>");
+}
+else {
+  $("#<%= @song.id %>").find(".like_form").html("<%= escape_javascript(
+    render partial: 'shared/like', locals: { song: @song }) %>");
+}
