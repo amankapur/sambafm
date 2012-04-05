@@ -5,6 +5,8 @@ class Song < ActiveRecord::Base
   validates :artist, presence: true
   has_many :song_relationships, foreign_key: "liked_song_id", dependent: :destroy
   has_many :likers, through: :song_relationships
+  
+  belongs_to :blog
 end
 # == Schema Information
 #

@@ -1,4 +1,8 @@
 class Blog < ActiveRecord::Base
+  validates :name, presence: true, uniqueness: true
+  validates :url, presence: true, uniqueness: true
+
+  has_many :songs
 end
 # == Schema Information
 #
