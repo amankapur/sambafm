@@ -10,6 +10,26 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+
+//=require jquery
+//=require jquery_ujs
+//=require_tree 
+//
+//
+//
+
+$(document).ready(function(){
+  var client_id = "8d4242fa1237419ca04ec11eb51007c0"
+  $("#jquery_jplayer_1").jPlayer({
+      ready: function () {
+      $(this).jPlayer("setMedia", {
+        mp3: "",
+        oga: ""
+      });
+    },
+    swfPath: "/js",
+    supplied: "mp3,oga"
+  });
+});
+
+

@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120330002330) do
     t.datetime "updated_at",  :null => false
     t.integer  "songid"
     t.string   "description"
+    t.string   "stream_url"
   end
 
   create_table "users", :force => true do |t|
