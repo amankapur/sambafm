@@ -3,8 +3,16 @@
   <td id='id'><%= song.id %></td>
   <td id='soundcloudid'><%= song.songid %></td>
   <td><%= song.title %></td>
-  <td><button id="PLAY" onclick=" var id = $(this).parent().prev().prev().text();
-                                  SC.whenStreamingReady(function(){
-                                  var soundObj = SC.stream(id);
-                                  soundObj.play(); });" >  PLAY  </button></td>
+  <td><button class ="play_button" id=<%=song.stream_url%>
+    onclick=" var id = $(this).attr('id');
+    $('#jquery_jplayer_1').jPlayer({
+    ready: function () {
+    $('#jquery_jplayer_1').jPlayer('setMedia', {
+      mp3: id,
+      oga: id
+      });
+    },
+    swfPath: '/js',
+    supplied: 'mp3, oga'});"
+    >PLAY  </button></td>
 </tr>
