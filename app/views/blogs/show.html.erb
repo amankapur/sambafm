@@ -1,0 +1,4 @@
+<h1><%= link_to @blog.name, @blog.url %><br /></h1>
+<div id=<%=@blog.name%>_songs>
+  <%= render partial: 'shared/song_table', locals: { songs: @songs } %>
+</div>

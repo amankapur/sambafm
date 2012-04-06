@@ -2,6 +2,7 @@ SambaFm::Application.routes.draw do
   devise_for :users
 
   resources :song_relationships, only: [:create, :destroy]
+  resources :blogs, only: [:index, :show]
   resources :users do
     member do
       get :library
