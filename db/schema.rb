@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330002330) do
+ActiveRecord::Schema.define(:version => 20120405235010) do
 
   create_table "blogs", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120330002330) do
     t.integer  "songid"
     t.string   "description"
     t.string   "stream_url"
+    t.integer  "blog_id"
   end
 
   create_table "users", :force => true do |t|

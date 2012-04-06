@@ -1,8 +1,7 @@
 <tr class="song_row" id="<%= song.id %>">
   <td class="like_form"><%= render partial: 'shared/like_form', locals: { song: song } %></td>
-  <td id='id'><%= song.id %></td>
-  <td id='soundcloudid'><%= song.songid %></td>
   <td><%= song.title %></td>
+  <td><%= song.blog.name %></td>
   <td><button class ="play_button" id=<%=song.stream_url%>
     onclick=" var id = $(this).attr('id');
     $('#jquery_jplayer_1').jPlayer({

@@ -52,7 +52,8 @@ task :scrape_songs => :environment do
       Song.create(:artist => 'Mr. Bojangles',
                   :songid => soundcloud_id,
                   :title => scraped_songs[soundcloud_id][0],
-                  :stream_url =>streamUrl)
+                  :stream_url =>streamUrl,
+                  :blog => Blog.all[rand(Blog.all.count)])
       puts 'creating song in db        ' + soundcloud_id
     end
   end
