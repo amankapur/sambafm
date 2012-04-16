@@ -17,5 +17,7 @@ end
 #  updated_at  :datetime        not null
 #  songid      :integer
 #  description :string(255)
+#  stream_url  :string(255)
+#  blog_id     :integer
 #
 
