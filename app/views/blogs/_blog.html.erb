@@ -1,4 +1,5 @@
   <tr>
     <td><%= link_to blog.name, blog_path(blog) %></td>
     <td><%= blog.songs.count %></td>
+    <td><%= render partial: 'shared/follow_form', locals: { blog: blog }%></td>
   </tr>
