@@ -2,6 +2,9 @@ class Blog < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :url, presence: true, uniqueness: true
 
+  has_many :blog_followings, foreign_key: "blog_id", dependent: :destroy
+  has_many :followers, through: :blog_followings
+
   has_many :songs
 end
 # == Schema Information
