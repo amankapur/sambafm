@@ -1,4 +1,5 @@
-<%= form_for current_user.song_relationships.build(liked_song_id: song.id), remote: true do |f| %>
+<%= form_for current_user.song_relationships.build(liked_song_id: song.id),
+  remote: true do |f| %>
   <div><%= f.hidden_field :liked_song_id %></div>
   <div class="actions"><%= f.submit "Like" %></div>
 <% end %>

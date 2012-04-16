@@ -1,0 +1,10 @@
+debugger;
+var my_stream = $("#stream");
+if (my_stream.length > 0) {
+  my_stream.html("<%= escape_javascript(
+    render partial: 'shared/song_table', locals: { songs: @songs })%>");
+}
+else {
+  $(".bfollow_<%=@blog.id%>").html("<%= escape_javascript( render partial: 'shared/follow', locals: { blog: @blog }) %>");
+}
+

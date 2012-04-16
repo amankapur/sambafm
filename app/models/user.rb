@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :liked_songs, through: :song_relationships
 
   has_many :blog_followings, foreign_key: "user_id", dependent: :destroy
-  has_many :followed_blogs, through: :blog_followings
+  has_many :followed_blogs, through: :blog_followings, source: :blog
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
