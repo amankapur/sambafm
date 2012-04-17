@@ -1,13 +1,11 @@
 class Songtemp
- 
+
  def initialize(uid, title, source, stream_url)
-    
     @uid = uid
     @source = source
     @stream_url = stream_url
     @title = title
-
- end 
+ end
 
  def uid
    @uid
