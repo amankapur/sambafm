@@ -1,0 +1,5 @@
+<%= form_for current_user.blog_followings.build(blog_id: blog.id),
+  remote: true do |f| %>
+  <div><%= f.hidden_field :blog_id %></div>
+  <div class="actions"><%= f.submit "Follow" %></div>
+<% end %>

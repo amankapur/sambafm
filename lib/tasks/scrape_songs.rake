@@ -1,4 +1,4 @@
-task :scrape_songs => :environment do 
+task :scrape_songs => :environment do
 
   require './lib/tasks/scrapper'
   hash = {"http://www.goodmusicallday.com/feed" => ["Soundcloud", "Sharebeast"]}

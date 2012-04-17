@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :song_relationships, foreign_key: "liker_id", dependent: :destroy
   has_many :liked_songs, through: :song_relationships
 
+  has_many :blog_followings, foreign_key: "user_id", dependent: :destroy
+  has_many :followed_blogs, through: :blog_followings, source: :blog
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
@@ -20,6 +23,18 @@ class User < ActiveRecord::Base
 
   def unlike_song!(song)
     self.song_relationships.find_by_liked_song_id(song.id).destroy
+  end
+
+  def follows_blog?(blog)
+    self.blog_followings.find_by_blog_id(blog.id)
+  end
+
+  def follow_blog!(blog)
+    self.blog_followings.create!(blog_id: blog.id)
+  end
+
+  def unfollow_blog!(blog)
+    self.blog_followings.find_by_blog_id(blog.id).destroy
   end
 
 end

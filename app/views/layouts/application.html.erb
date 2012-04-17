@@ -16,6 +16,7 @@
           <li><%= link_to "Blogs", blogs_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to "Library", library_user_path(current_user), id: "library_link" %></li>
+            <li><%= link_to "Stream", stream_user_path(current_user), id: "stream_link" %></li>
           <% end %>
         </ul>
         </nav>
