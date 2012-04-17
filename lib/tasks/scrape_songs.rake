@@ -9,7 +9,10 @@ task :scrape_songs => :environment do
       :songid => song.uid,
       :title => song.title,
       :stream_url => song.stream_url,
-      :blog => song.source)
+      :blog => Blog.create(
+        :name => song.source,
+        :url => 'www.goodmusicallday')
+      )
     puts "song created with songid" + song.uid
   end
 end
