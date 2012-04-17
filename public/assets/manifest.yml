@@ -1,9 +1,13 @@
 ---
-jplayer.blue.monday.jpg: jplayer.blue.monday-d49ee1131dc6344738d7be3b9741be62.jpg
-jplayer.blue.monday.video.play.hover.png: jplayer.blue.monday.video.play.hover-b89f7c816ac9c6bbe927ce789b42bed3.png
-jplayer.blue.monday.video.play.png: jplayer.blue.monday.video.play-de11be9901889b241108b091f97be3f7.png
-pbar-ani.gif: pbar-ani-8f395f2f21cba5b0549e6924e596efee.gif
-rails.png: rails-782b548cc1ba7f898cdad2d9eb8420d2.png
-Jplayer.swf: Jplayer-864cad38afe72fe97385401103d32830.swf
+add-on/jplayer.playlist.min.js: add-on/jplayer.playlist.min-79a40b89542d7d32ee19f20eeb599167.js
+add-on/jquery.jplayer.inspector.js: add-on/jquery.jplayer.inspector-6f19bd26076c0adc0693eca0d96170d9.js
 application.js: application-85fd4953892625d0012fb3d0a112d03b.js
+jquery.jplayer.min.js: jquery.jplayer.min-7bec150526f45d866c47c7b6f22507be.js
 application.css: application-c377c951ee3884ea61fa174d1a57bf3b.css
+jplayer.blue.monday.css: jplayer.blue.monday-c377c951ee3884ea61fa174d1a57bf3b.css
+jquery-ui.js: jquery-ui-b8c4c8fa5e5d95acf3520327139db5fd.js
+jquery-ui.min.js: jquery-ui.min-5d001a91bcf030a10c458feda96a6217.js
+jquery.js: jquery-59c6811789e95f05b62e2bbf91ba8393.js
+jquery.min.js: jquery.min-a03e53743fcd9741b28734d9cc17a1a6.js
+jquery_ujs.js: jquery_ujs-c083290e87c0016c971d1aa12f6aed7c.js
+coffee-script.js: coffee-script-9e47d4598c0fb8cccbf31f20c8a922f5.js
