@@ -15,8 +15,23 @@
           <li><%= link_to "Home", root_path, id: "logo" %></li>
           <li><%= link_to "Blogs", blogs_path %></li>
           <% if user_signed_in? %>
-            <li><%= link_to "Library", library_user_path(current_user), id: "library_link" %></li>
-            <li><%= link_to "Stream", stream_user_path(current_user), id: "stream_link" %></li>
+            <li><%= link_to "Library", library_user_path(current_user),
+              id: "library_link" %></li>
+              <li><%= link_to "Stream", stream_user_path(current_user),
+                id: "stream_link" %></li>
+                <li><%= link_to "Playlists",  playlists_user_path(current_user),
+                  id: "playlists_link" %></li>
+            <ul>
+              <div id="playlists">
+                <%= render current_user.playlists %>
+              </div>
+              <li id="create_playlist">
+              <%= form_for current_user.playlists.build, remote: true do |f| %>
+                <%= f.text_field :name %>
+              <% end %>
+              </li>
+            </ul>
+            </li>
           <% end %>
         </ul>
         </nav>

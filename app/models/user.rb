@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     self.blog_followings.find_by_blog_id(blog.id).destroy
   end
 
+  def create_playlist!(name)
+    playlists.create! name: name
+  end
+
 end
 # == Schema Information
 #
