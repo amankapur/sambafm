@@ -3,6 +3,7 @@ class Song < ActiveRecord::Base
 
   has_many :song_relationships, foreign_key: "liked_song_id", dependent: :destroy
   has_many :likers, through: :song_relationships
+  has_many :playlist_items, dependent: :destroy
 
   belongs_to :blog
   validates :title, :presence => true, :uniqueness => { :case_sensitive => false }

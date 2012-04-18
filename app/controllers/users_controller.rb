@@ -14,4 +14,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @songs = @user.followed_blogs.collect{|blog| blog.songs}.flatten(1)
   end
+
+  def playlists
+    @user = User.find(params[:id])
+    @playlists = @user.playlists
+  end
 end

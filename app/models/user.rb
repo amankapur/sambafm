@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :blog_followings, foreign_key: "user_id", dependent: :destroy
   has_many :followed_blogs, through: :blog_followings, source: :blog
 
+  has_many :playlists
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
@@ -35,6 +37,10 @@ class User < ActiveRecord::Base
 
   def unfollow_blog!(blog)
     self.blog_followings.find_by_blog_id(blog.id).destroy
+  end
+
+  def create_playlist!(name)
+    playlists.create! name: name
   end
 
 end
