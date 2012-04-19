@@ -7,45 +7,41 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top">
-    <div class=navbar-inner">
-      <div class="container">
-        <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path, id: "logo" %></li>
-          <li><%= link_to "Blogs", blogs_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "Library", library_user_path(current_user),
-              id: "library_link" %></li>
+    <div class = "container">
+      <div class = "leftnav">
+      <ul class="nav-main pull-right">
+            <li><%= link_to "Home", root_path, id: "logo", class: "nav home-nav" %></li>
+            <li><%= link_to "Blogs", blogs_path, class:"nav blogs-nav" %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Library", library_user_path(current_user),
+                id: "library_link", class:" nav library-nav" %></li>
               <li><%= link_to "Stream", stream_user_path(current_user),
-                id: "stream_link" %></li>
-                <li><%= link_to "Playlists",  playlists_user_path(current_user),
-                  id: "playlists_link" %></li>
-            <ul>
-              <div id="playlists">
+                id: "stream_link", class:" nav stream-nav" %></li>
+              <li><%= link_to "Playlists",  playlists_user_path(current_user),
+                id: "playlists_link", class:" nav playlists-nav" %></li>
+              <ul>
+                <div id="playlists">
                 <%= render current_user.playlists %>
-              </div>
-              <li id="create_playlist">
-              <%= form_for current_user.playlists.build, remote: true do |f| %>
-                <%= f.text_field :name %>
-              <% end %>
+                </div>
+                  <li id="create_playlist">
+                    <%= form_for current_user.playlists.build, remote: true do |f| %>
+                    <%= f.text_field :name %>
+                    <% end %>
+                  </li>
+              </ul>
               </li>
-            </ul>
-            </li>
-          <% end %>
-        </ul>
-        </nav>
+              <% end %>
+          </ul>
       </div>
-    </div>
-    </header>
-    <div class="container">
-      <section class="round">
+  <div class = "songs_table">
+    <div class="songs">
       <% flash.each do |k, v| %>
         <div class="flash <%= k %>"><%= v %></div>
       <% end %>
       <%= yield %>
-      </section>
       <%= debug(params) if Rails.env.development? %>
+    </div>
+  </div>
     </div>
   </body>
 </html>
