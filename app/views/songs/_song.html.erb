@@ -1,28 +1,29 @@
-<div class="ui-draggable">
-  <tr class="song_row" id="<%= song.id %>">
-    <td class="like_form">
-      <%= render partial: 'shared/like_form', locals: { song: song } %>
-    </td>
-    <td>
+<li class="song_row" id="<%= song.id %>">
+<div class="song_container">
+  <span>
+    <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
+  </span>
+  <span class="like_form">
+    <%= render partial: 'shared/like_form', locals: { song: song } %>
+  </span>
+  <div>
+    <div>
       <%= song.title %>
-    </td>
-    <td>
-      <%= song.artist%>
-    </td>
-    <td>
-      <div class="blink_<%=song.blog.id%>">
-        <%= link_to song.blog.name, blog_path(song.blog) %>
-      </div>
-      <div>
-        <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
-      </div>
-    </td>
-    <td>
-      <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
-    </td>
-    <td></td>
-  </tr>
+    </div>
+    <div>
+      <%= song.artist %>
+    </div>
+  </div>
+  <div class="blog">
+    <div class="blink_<%=song.blog.id%>">
+      <%= link_to song.blog.name, blog_path(song.blog) %>
+    </div>
+    <div class="follow_form">
+      <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
+    </div>
+  </div>
 </div>
+</li>
 
 <script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
 <script>

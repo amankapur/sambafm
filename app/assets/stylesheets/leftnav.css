@@ -1,5 +1,5 @@
 body{
-  background-color: #202020;
+  background-color: #283136;
 }
 
 .container {
@@ -50,7 +50,7 @@ color: grey;
 }
 
 .home-nav:hover {
-  color: blue;
+  color: #0057AE;
 }
 
 .blogs-nav:hover {
