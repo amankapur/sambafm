@@ -1,12 +1,25 @@
-<tr class="song_row" id="<%= song.id %>">
-  <td class="like_form"><%= render partial: 'shared/like_form', locals: { song: song } %></td>
-  <td><%= song.title %></td>
-  <td><div class="blink_<%=song.blog.id%>"><%= link_to song.blog.name, blog_path(song.blog) %></div>
-    <%= render partial: 'shared/follow_form',
-      locals: { blog: song.blog } %>
-  </td>
-  <td><button class ="play_button" id=<%=song.stream_url%>>PLAY  </button></td>
-</tr>
+<div class="ui-draggable">
+  <tr class="song_row" id="<%= song.id %>">
+    <td class="like_form">
+      <%= render partial: 'shared/like_form', locals: { song: song } %>
+    </td>
+    <td>
+      <%= song.title %>
+    </td>
+    <td>
+      <div class="blink_<%=song.blog.id%>">
+        <%= link_to song.blog.name, blog_path(song.blog) %>
+      </div>
+      <div>
+        <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
+      </div>
+    </td>
+    <td>
+      <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
+    </td>
+    <td></td>
+  </tr>
+</div>
 
 <script>
   $(".play_button").click(function(){
@@ -18,7 +31,8 @@
     $("#jquery_jplayer_1").jPlayer(
     {
       ready: function(){
-        $(this).jPlayer("setMedia",{mp3: url}).jPlayer("play"); // Attempt to auto play the media
+          // Attempt to auto play the media
+          $(this).jPlayer("setMedia",{mp3: url}).jPlayer("play");
       },
       supplied: "mp3"
     });
