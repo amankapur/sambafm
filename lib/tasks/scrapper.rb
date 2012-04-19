@@ -183,7 +183,13 @@ class Scrapper
     if url.include?("thissongissick")
       return "This Song is Sick"
     end
-
+    
+    if url.include?("biggreen")
+      return "Big Green Beats"
+    end
+    if url.include?("VacayWave")
+      return "Vacay Wave"
+    end
     return "Unknown"
   end
 

@@ -8,7 +8,13 @@ task :scrape_songs => :environment do
   #         ["Soundcloud", "Sharebeast"],
   #"http://feeds.feedburner.com/nah_right?format=xml" =>
   #         ["Sharebeast"],
-  "http://thissongissick.com/blog/feed/" => ["Soundcloud"]
+  #"http://thissongissick.com/blog/feed/" =>
+  #         ["Soundcloud"],
+  "http://www.biggreenbeats.com/feed" =>
+           ["Soundcloud"],
+  "http://feeds.feedburner.com/VacayWave?format=xml" =>
+           ["Soundcloud"]
+  
   }
 
   a = Scrapper.new(hash)
