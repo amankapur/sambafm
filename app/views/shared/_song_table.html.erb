@@ -1,9 +1,6 @@
-<table border="1">
-  <%= render 'shared/header' %>
-  <% songs.each do |song| %>
-    <%= render partial: 'songs/song', locals: { song: song } %>
-  <% end %>
-</table>
+<ul class="song_table">
+  <%= render @songs %>
+</ul>
 <br />
 
 

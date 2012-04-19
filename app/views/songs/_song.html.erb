@@ -1,27 +1,26 @@
-<div class="ui-draggable">
-  <tr class="song_row" id="<%= song.id %>">
-    <td class="like_form">
+<div class="song_container">
+  <li class="song_row" id="<%= song.id %>">
+    <span class="like_form">
       <%= render partial: 'shared/like_form', locals: { song: song } %>
-    </td>
-    <td>
+    </span>
+    <span>
       <%= song.title %>
-    </td>
-    <td>
-      <%= song.artist%>
-    </td>
-    <td>
+    </span>
+    <span>
+      <%= song.artist %>
+    </span>
+    <span class="blogs">
       <div class="blink_<%=song.blog.id%>">
         <%= link_to song.blog.name, blog_path(song.blog) %>
       </div>
-      <div>
+      <div class="follow_form">
         <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
       </div>
-    </td>
-    <td>
+    </span>
+    <span>
       <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
-    </td>
-    <td></td>
-  </tr>
+    </span>
+  </li>
 </div>
 
 <script>
