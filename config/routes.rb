@@ -3,11 +3,13 @@ SambaFm::Application.routes.draw do
 
   resources :song_relationships, only: [:create, :destroy]
   resources :blog_followings, only: [:create, :destroy]
+  resources :playlists
   resources :blogs, only: [:index, :show]
   resources :users do
     member do
       get :library
       get :stream
+      get :playlists
     end
   end
 
