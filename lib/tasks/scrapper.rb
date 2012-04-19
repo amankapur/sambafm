@@ -79,9 +79,9 @@ class Scrapper
 
         if track !=nil
           title = track.title
-          
+
           artist = get_artist(title)
-          
+
           r = /-(.*)/
           b = title.match r
           if b!= nil
