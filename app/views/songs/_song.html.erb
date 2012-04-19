@@ -7,6 +7,9 @@
       <%= song.title %>
     </td>
     <td>
+      <%= song.artist%>
+    </td>
+    <td>
       <div class="blink_<%=song.blog.id%>">
         <%= link_to song.blog.name, blog_path(song.blog) %>
       </div>

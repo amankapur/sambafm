@@ -1,15 +1,29 @@
 task :scrape_songs => :environment do
-
   require './lib/tasks/scrapper'
-  hash = {"http://www.goodmusicallday.com/feed" => ["Soundcloud", "Sharebeast"]}
+
+
+  hash =
+  {
+  "http://www.goodmusicallday.com/feed" =>
+           ["Soundcloud", "Sharebeast"],
+  "http://feeds.feedburner.com/nah_right?format=xml" =>
+           ["Sharebeast"]
+  }
+
   a = Scrapper.new(hash)
+  puts "scrapped songs    " + a.songs.count.to_s
   a.songs.each do |song|
-    Song.create(
-      :artist => "Mr.Hobo",
-      :songid => song.uid,
-      :title => song.title,
-      :stream_url => song.stream_url,
-      :blog => Blog.all[rand(Blog.count)])
-    puts "song created with songid" + song.uid
+    #if Song.find(:first, :conditions => {:songid => song.uid}) == nil
+      #puts "creating song with id       " + song.uid
+      Song.create(
+        :artist => song.artist,
+        :songid => song.uid,
+        :title => song.title,
+        :source => song.source,
+        :stream_url => song.stream_url,
+        :blog => Blog.find(:first, :conditions => {:name => song.source}))
+       #puts "song created with songid    " + song.uid
+    #end
   end
+  puts "Songs created   " + Song.count.to_s
 end
