@@ -24,20 +24,33 @@
   </tr>
 </div>
 
+<script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
 <script>
+
+  var CLIENT_ID = "8d4242fa1237419ca04ec11eb51007c0";
+
+  //$(document).ready(function(){
+  //  SC.initialize({
+  //    client_id: CLIENT_ID ,
+  //  });
+  // });
+
+
+
+
   $(".play_button").click(function(){
     var url = $(this).attr("id");
-    play_song(url);
+    $("#jquery_jplayer_1").jPlayer("setMedia",{mp3: url + "?client_id=" + CLIENT_ID}).jPlayer("play");
   });
 
-  function play_song(url){
+  $(document).ready(function(){
     $("#jquery_jplayer_1").jPlayer(
     {
       ready: function(){
-          // Attempt to auto play the media
-          $(this).jPlayer("setMedia",{mp3: url}).jPlayer("play");
+        // Attempt to auto play the media
+
       },
       supplied: "mp3"
     });
-  }
+  });
 </script>
