@@ -40,6 +40,7 @@ ul {
 }
 
 .nav-main li a {
+  position: relative;
   text-decoration: none;
   font-size: 200%;
 }
@@ -49,15 +50,17 @@ ul {
 }
 
 ul.nav-main li span {
+  float: left;
+  position: absolute;
   width: 17px;
   height: 35px;
-  float: left;
   background: url(subnav_btn.gif) no-repeat center top;
 }
 
 ul.nav-main li ul.subnav {
-  position: absolute;
-  left: 0px; top: 35px;
+  position: relative;
+  /*left: 0px; top: 35px;*/
+  left: 20px;
   background: #333;
   margin: 0; padding: 0;
   display: none;
