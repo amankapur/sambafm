@@ -2,19 +2,19 @@
 <div class="song_container">
   <div class="play_like">
     <span>
-      <a class ="play_button song_play not-playing" onclick="toggle(this);"
+      <a class ="play_button song_play not-playing" onclick="toggle_play(this)"
         id=<%=song.stream_url%>>  </a>
     </span>
-    <span class="like_form song_like">
+    <a class="like_form song_like ">
       <%= render partial: 'shared/like_form', locals: { song: song } %>
-    </span>
+    </a>
   </div>
   <div class="title_artist">
     <div class="song_title">
       <%= song.title %>
     </div>
     <div class="song_artist">
-      <%= song.artist %>
+       by   <%= song.artist %>
     </div>
   </div>
   <div class="blog song_blog">
@@ -29,19 +29,23 @@
 </li>
 
 <script>
-  function toggle(element){
+  function toggle_play(element){
+    var CLIENT_ID = "8d4242fa1237419ca04ec11eb51007c0";
 
-
+    var url = element.id;
     if( element.className.indexOf("not-playing")>-1)
     {
       $(element).removeClass("not-playing");
       $(element).addClass("playing");
+      $("#jquery_jplayer_1").jPlayer("setMedia", {mp3: url + "?client_id=" + CLIENT_ID}).jPlayer("play"); 
     }
     else if (element.className.indexOf("playing")>-1)
     {
       $(element).removeClass("playing");
-      $(element).addClass("playing");
+      $(element).addClass("not-playing");
+      $("#jquery_jplayer_1").jPlayer("pause");
     }
     else return false;
   }
+
 </script>

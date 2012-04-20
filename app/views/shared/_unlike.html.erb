@@ -1,4 +1,5 @@
 <%= form_for current_user.song_relationships.find_by_liked_song_id(song.id),
   html: { method: :delete }, remote: true do |f| %>
-    <div class="actions"><%= f.submit "Unlike" %></div>
+  <div class="actions"><%= f.submit "Unlike",
+    :type => :image, :src => "/assets/dislike_button_16.jpg", :class => "unlike_button" %></div>
 <% end %>

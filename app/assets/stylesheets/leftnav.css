@@ -73,7 +73,7 @@ ul.nav-main li span.subhover { background-position: center bottom bottom; cursor
 }
 
 h1, a, p, h2, h3, td, th, button, input  {
-  color: grey;
+  color: white;
 }
 
 #new_playlist {
