@@ -1,42 +1,26 @@
+<li class="song_row" id="<%= song.id %>">
 <div class="song_container">
-  <li class="song_row" id="<%= song.id %>">
-    <span class="like_form">
-      <%= render partial: 'shared/like_form', locals: { song: song } %>
-    </span>
-    <span>
+  <span>
+    <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
+  </span>
+  <span class="like_form">
+    <%= render partial: 'shared/like_form', locals: { song: song } %>
+  </span>
+  <div>
+    <div>
       <%= song.title %>
-    </span>
-    <span>
+    </div>
+    <div>
       <%= song.artist %>
-    </span>
-    <span class="blogs">
-      <div class="blink_<%=song.blog.id%>">
-        <%= link_to song.blog.name, blog_path(song.blog) %>
-      </div>
-      <div class="follow_form">
-        <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
-      </div>
-    </span>
-    <span>
-      <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
-    </span>
-  </li>
+    </div>
+  </div>
+  <div class="blog">
+    <div class="blink_<%=song.blog.id%>">
+      <%= link_to song.blog.name, blog_path(song.blog) %>
+    </div>
+    <div class="follow_form">
+      <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
+    </div>
+  </div>
 </div>
-
-<script>
-  $(".play_button").click(function(){
-    var url = $(this).attr("id");
-    play_song(url);
-  });
-
-  function play_song(url){
-    $("#jquery_jplayer_1").jPlayer(
-    {
-      ready: function(){
-          // Attempt to auto play the media
-          $(this).jPlayer("setMedia",{mp3: url}).jPlayer("play");
-      },
-      supplied: "mp3"
-    });
-  }
-</script>
+</li>

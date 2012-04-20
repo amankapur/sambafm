@@ -1,0 +1,16 @@
+.song_table {
+  position: absolute;
+}
+.song_container {
+  position: relative;
+  .like_form {
+    float: right;
+  }
+  .blog {
+    float: top;
+    position: relative;
+  }
+  .play_button {
+    float: left;
+  }
+}
