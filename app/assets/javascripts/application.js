@@ -15,23 +15,8 @@
 //=require jquery_ujs
 //=require jquery-ui
 //=require_tree
-//
-//
-//
 
-//$(document).ready(function(){
-//  var client_id = "8d4242fa1237419ca04ec11eb51007c0"
 
-//  $("#jquery_jplayer_1").jPlayer({
-//      ready: function () {
-//     $(this).jPlayer("setMedia", {
-//        mp3:"http://www.sharebeast.com/mp3embed-x96ci64j0nnt.mp3"
-       //mp3: "http://api.soundcloud.com/tracks/42078481/stream?client_id=" + client_id,
-//      });
-//    },
-//   supplied: "mp3"
-//  });
 
-//});
 
 
