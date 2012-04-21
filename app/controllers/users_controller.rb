@@ -19,4 +19,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @playlists = @user.playlists
   end
+
+  def blogs
+    @user = User.find(params[:id])
+    @blogs = @user.followed_blogs
+  end
 end

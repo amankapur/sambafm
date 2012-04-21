@@ -1,0 +1,4 @@
+<a id="playlist_create_link" href="#">Create Playlist</a>
+<%= form_for current_user.playlists.build, remote: true do |f| %>
+  <%= f.text_field :name, style: 'width: 100px;' %>
+<% end %>

@@ -1,11 +1,11 @@
 <li class="song_row" id="<%= song.id %>">
 <div class="song_container">
-  <span>
+  <div>
     <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
-  </span>
-  <span class="like_form">
+  </div>
+  <div class="like_form">
     <%= render partial: 'shared/like_form', locals: { song: song } %>
-  </span>
+  </div>
   <div>
     <div>
       <%= song.title %>
@@ -22,36 +22,7 @@
       <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
     </div>
   </div>
+  <script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
 </div>
 </li>
 
-<script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
-<script>
-
-  var CLIENT_ID = "8d4242fa1237419ca04ec11eb51007c0";
-
-  //$(document).ready(function(){
-  //  SC.initialize({
-  //    client_id: CLIENT_ID ,
-  //  });
-  // });
-
-
-
-
-  $(".play_button").click(function(){
-    var url = $(this).attr("id");
-    $("#jquery_jplayer_1").jPlayer("setMedia",{mp3: url + "?client_id=" + CLIENT_ID}).jPlayer("play");
-  });
-
-  $(document).ready(function(){
-    $("#jquery_jplayer_1").jPlayer(
-    {
-      ready: function(){
-        // Attempt to auto play the media
-
-      },
-      supplied: "mp3"
-    });
-  });
-</script>
