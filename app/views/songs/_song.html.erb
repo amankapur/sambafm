@@ -2,7 +2,7 @@
 <div class="song_container">
   <div class="play_like">
     <span>
-      <a class ="play_button song_play not-playing" onclick="toggle(this);"
+      <a class="play_button song_play not-playing"
         id=<%=song.stream_url%>>  </a>
     </span>
     <span class="like_form song_like">
@@ -27,21 +27,3 @@
   </div>
 </div>
 </li>
-
-<script>
-  function toggle(element){
-
-
-    if( element.className.indexOf("not-playing")>-1)
-    {
-      $(element).removeClass("not-playing");
-      $(element).addClass("playing");
-    }
-    else if (element.className.indexOf("playing")>-1)
-    {
-      $(element).removeClass("playing");
-      $(element).addClass("playing");
-    }
-    else return false;
-  }
-</script>
