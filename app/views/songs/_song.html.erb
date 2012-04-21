@@ -5,16 +5,16 @@
       <a class="play_button song_play not-playing"
         id=<%=song.stream_url%>>  </a>
     </span>
-    <span class="like_form song_like">
+    <a class="like_form song_like ">
       <%= render partial: 'shared/like_form', locals: { song: song } %>
-    </span>
+    </a>
   </div>
   <div class="title_artist">
     <div class="song_title">
       <%= song.title %>
     </div>
     <div class="song_artist">
-      <%= song.artist %>
+       by   <%= song.artist %>
     </div>
   </div>
   <div class="blog song_blog">
