@@ -13,9 +13,14 @@ $(document).ready ->
   $("ul.subnav").parent()
     .append "<span> </span>"
 
-  $("ul.topnav li span").click(->
+  #$("ul.nav-main li span").click(->
+    #$(this).parent().find("ul.subnav").slideDown("fast").show()
+  #)
+  $("ul.nav-main li span").click(->
     $(this).parent().find("ul.subnav").slideDown("fast").show()
-    $(this).parent().hover (->
-    ), ->
+    $(this).parent().hover (->), ->
       $(this).parent().find("ul.subnav").slideUp "slow"
-  )
+  ).hover (->
+    $(this).addClass "subhover"
+  ), ->
+    $(this).removeClass "subhover"
