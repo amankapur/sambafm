@@ -1,56 +1,29 @@
-<div class="ui-draggable">
-  <tr class="song_row" id="<%= song.id %>">
-    <td class="like_form">
+<li class="song_row" id="<%= song.id %>">
+<div class="song_container">
+  <div class="play_like">
+    <span>
+      <a class="play_button song_play not-playing"
+        id=<%=song.stream_url%>>  </a>
+    </span>
+    <a class="like_form song_like ">
       <%= render partial: 'shared/like_form', locals: { song: song } %>
-    </td>
-    <td>
+    </a>
+  </div>
+  <div class="title_artist">
+    <div class="song_title">
       <%= song.title %>
-    </td>
-    <td>
-      <%= song.artist%>
-    </td>
-    <td>
-      <div class="blink_<%=song.blog.id%>">
-        <%= link_to song.blog.name, blog_path(song.blog) %>
-      </div>
-      <div>
-        <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
-      </div>
-    </td>
-    <td>
-      <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
-    </td>
-    <td></td>
-  </tr>
+    </div>
+    <div class="song_artist">
+       by   <%= song.artist %>
+    </div>
+  </div>
+  <div class="blog song_blog">
+    <div class="follow_form blog_follow">
+      <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
+    </div>
+    <div class="blog_name blink_<%=song.blog.id%>">
+      <%= link_to song.blog.name, blog_path(song.blog) %>
+    </div>
+  </div>
 </div>
-
-<script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
-<script>
-
-  var CLIENT_ID = "8d4242fa1237419ca04ec11eb51007c0";
-
-  //$(document).ready(function(){
-  //  SC.initialize({
-  //    client_id: CLIENT_ID ,
-  //  });
-  // });
-
-
-
-
-  $(".play_button").click(function(){
-    var url = $(this).attr("id");
-    $("#jquery_jplayer_1").jPlayer("setMedia",{mp3: url + "?client_id=" + CLIENT_ID}).jPlayer("play");
-  });
-
-  $(document).ready(function(){
-    $("#jquery_jplayer_1").jPlayer(
-    {
-      ready: function(){
-        // Attempt to auto play the media
-
-      },
-      supplied: "mp3"
-    });
-  });
-</script>
+</li>

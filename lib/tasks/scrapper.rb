@@ -79,7 +79,6 @@ class Scrapper
 
         if track !=nil
           title = track.title
-
           artist = get_artist(title)
 
           r = /-(.*)/
@@ -179,6 +178,17 @@ class Scrapper
     end
     if url.include?("nah_right")
       return "Nah Right"
+    end
+
+    if url.include?("thissongissick")
+      return "This Song is Sick"
+    end
+    
+    if url.include?("biggreen")
+      return "Big Green Beats"
+    end
+    if url.include?("VacayWave")
+      return "Vacay Wave"
     end
     return "Unknown"
   end

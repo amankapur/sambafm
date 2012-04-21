@@ -7,44 +7,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top">
-    <div class=navbar-inner">
-      <div class="container">
-        <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path, id: "logo" %></li>
-          <li><%= link_to "Blogs", blogs_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "Library", library_user_path(current_user),
-              id: "library_link" %></li>
-              <li><%= link_to "Stream", stream_user_path(current_user),
-                id: "stream_link" %></li>
-                <li><%= link_to "Playlists",  playlists_user_path(current_user),
-                  id: "playlists_link" %></li>
-            <ul>
-              <div id="playlists">
-                <%= render current_user.playlists %>
-              </div>
-              <li id="create_playlist">
-              <%= form_for current_user.playlists.build, remote: true do |f| %>
-                <%= f.text_field :name %>
-              <% end %>
-              </li>
-            </ul>
-            </li>
-          <% end %>
-        </ul>
-        </nav>
-      </div>
-    </div>
-    </header>
     <div class="container">
-      <section class="round">
-      <% flash.each do |k, v| %>
-        <div class="flash <%= k %>"><%= v %></div>
-      <% end %>
-      <%= yield %>
-      </section>
+      <%= render 'shared/nav' %>
+      <div class = "songs_table">
+        <% flash.each do |k, v| %>
+          <div class="flash <%= k %>"><%= v %></div>
+        <% end %>
+        <%= yield %>
+      </div>
       <%= debug(params) if Rails.env.development? %>
     </div>
   </body>

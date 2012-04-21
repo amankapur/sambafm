@@ -10,6 +10,7 @@ SambaFm::Application.routes.draw do
       get :library
       get :stream
       get :playlists
+      get :blogs
     end
   end
 

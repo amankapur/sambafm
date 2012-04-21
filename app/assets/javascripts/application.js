@@ -14,6 +14,7 @@
 //=require jquery
 //=require jquery_ujs
 //=require jquery-ui
+//=requre "http://connect.soundcloud.com/sdk.js"
 //=require_tree
 
 

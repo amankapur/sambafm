@@ -1,0 +1,103 @@
+body{
+  background-color: #283136;
+  font: 14px/16px sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 50%;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.leftnav{
+  width: 20%;
+  position: fixed;
+  top: 100px;
+  left: 75px;
+}
+
+.songs_table{
+  width: 100%;
+  position: relative;
+}
+
+.songs {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.music_player {
+  position: relative;
+  top:20px;
+  width: 430px;
+}
+
+ul {
+  list-style-type: none;
+
+}
+
+.nav-main li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 200%;
+}
+
+.nav-main li {
+  margin-bottom: 5px;
+}
+
+ul.nav-main li span {
+  float: left;
+  position: absolute;
+  width: 17px;
+  height: 35px;
+  background: url(subnav_btn.gif) no-repeat center top;
+}
+
+ul.nav-main li ul.subnav {
+  position: relative;
+  /*left: 0px; top: 35px;*/
+  left: 20px;
+  background: #333;
+  margin: 0; padding: 0;
+  display: none;
+  float: left;
+  width: 170px;
+  border: 1px solid #111;
+}
+
+ul.nav-main li span.subhover { background-position: center bottom bottom; cursor: pointer;}
+
+.nav {
+  color: grey;
+}
+
+h1, a, p, h2, h3, td, th, button, input  {
+  color: white;
+}
+
+#new_playlist {
+  display: none;
+}
+.home-nav:hover {
+  color: #0057AE;
+}
+
+.blogs-nav:hover {
+  color: orange;
+}
+
+.stream-nav:hover {
+  color:#69CF26;
+}
+
+.library-nav:hover {
+  color:pink;
+}
+
+.playlists-nav:hover {
+  color:#732A9F;
+}
