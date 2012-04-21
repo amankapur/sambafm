@@ -3,14 +3,39 @@
 }
 .song_container {
   position: relative;
-  .like_form {
-    float: right;
-  }
-  .blog {
-    float: top;
-    position: relative;
-  }
-  .play_button {
-    float: left;
-  }
+  margin-bottom: 20px;
+  width: 100%;
+  float: left;
+
 }
+
+
+.play_like, .title_artist,
+.song_like, .song_play
+{
+  position: relative;
+  float: left;
+  margin-left: 5px;
+}
+
+.blog_follow, .blog_name, .song_blog {
+  margin-left: 3px;
+  float: right;
+}
+
+.song_play {
+  width: 16px; 
+  height:16px;
+}
+
+.not-playing {
+
+  background-image: url("play_button_16.jpg");
+
+}
+
+.playing {
+
+  background-image: url("pause_button_16.jpg");
+}
+

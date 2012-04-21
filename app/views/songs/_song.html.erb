@@ -1,28 +1,47 @@
 <li class="song_row" id="<%= song.id %>">
 <div class="song_container">
-  <div>
-    <button class ="play_button" id=<%=song.stream_url%>>PLAY  </button>
+  <div class="play_like">
+    <span>
+      <a class ="play_button song_play not-playing" onclick="toggle(this);"
+        id=<%=song.stream_url%>>  </a>
+    </span>
+    <span class="like_form song_like">
+      <%= render partial: 'shared/like_form', locals: { song: song } %>
+    </span>
   </div>
-  <div class="like_form">
-    <%= render partial: 'shared/like_form', locals: { song: song } %>
-  </div>
-  <div>
-    <div>
+  <div class="title_artist">
+    <div class="song_title">
       <%= song.title %>
     </div>
-    <div>
+    <div class="song_artist">
       <%= song.artist %>
     </div>
   </div>
-  <div class="blog">
-    <div class="blink_<%=song.blog.id%>">
-      <%= link_to song.blog.name, blog_path(song.blog) %>
-    </div>
-    <div class="follow_form">
+  <div class="blog song_blog">
+    <div class="follow_form blog_follow">
       <%= render partial: 'shared/follow_form', locals: { blog: song.blog } %>
     </div>
+    <div class="blog_name blink_<%=song.blog.id%>">
+      <%= link_to song.blog.name, blog_path(song.blog) %>
+    </div>
   </div>
-  <script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
 </div>
 </li>
 
+<script>
+  function toggle(element){
+
+
+    if( element.className.indexOf("not-playing")>-1)
+    {
+      $(element).removeClass("not-playing");
+      $(element).addClass("playing");
+    }
+    else if (element.className.indexOf("playing")>-1)
+    {
+      $(element).removeClass("playing");
+      $(element).addClass("playing");
+    }
+    else return false;
+  }
+</script>
