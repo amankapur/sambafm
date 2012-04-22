@@ -10,19 +10,18 @@
   <body>
     <div class="header">
       <a class= "logo"> ROWL </a>
+      <div class="tab_header">
+          <a href="#"> Most Popular </a> 
+          <a href="#"> ur10  </a>
+          <a href="#"> Blogger's favorites </a>
+      </div>
+
     </div>
     <div class="container">
       <%= render 'shared/nav' %>
-     <div class = "songs_table">
-        <div class="table_header">
-        <table>
-          <th><a href="#"> Most Popular </a> </th>
-          <th><a href="#"> ur10  </a></th>
-          <th><a href="#"> Blogger's favorites </a> </th>
-        </table>
-      </div>
-      
-       <%= yield %>
+      <div class = "songs_table">
+
+        <%= yield %>
       </div>
     </div>
     <div class="music_player"> 
