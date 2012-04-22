@@ -2,10 +2,7 @@
   position: relative;
   float:left;
   height: 100%;
-  border-right-style: solid;
-  border-right-color: orange;
-
-}
+  }
 
 .music_player {
   position: relative;
