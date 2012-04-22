@@ -9,12 +9,12 @@ $(document).ready(function(){
       swfPath: "/js",
       solution: "html, flash"
     });
+    $(".play_button").click(function(){
     var CLIENT_ID = "8d4242fa1237419ca04ec11eb51007c0";
 
-    $(".play_button").click(function(){
       if($(this).hasClass("not-playing"))
       {
-        var url = $(this).attr("id");
+        var url = $(this).parent().find("#link_url").text();
         $("#jquery_jplayer_1").jPlayer(
         "setMedia",{mp3: url + "?client_id=" + CLIENT_ID}).jPlayer("play");
         $(this).removeClass("not-playing");
