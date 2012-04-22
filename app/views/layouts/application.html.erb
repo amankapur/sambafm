@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
     <title>SambaFm</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div class="header">
+      <a class= "logo"> ROWL </a>
+    </div>
     <div class="container">
       <%= render 'shared/nav' %>
-      <div class = "songs_table">
-        <% flash.each do |k, v| %>
-          <div class="flash <%= k %>"><%= v %></div>
-        <% end %>
-        <%= yield %>
+     <div class = "songs_table">
+        <div class="table_header">
+        <table>
+          <th><a href="#"> Most Popular </a> </th>
+          <th><a href="#"> ur10  </a></th>
+          <th><a href="#"> Blogger's favorites </a> </th>
+        </table>
       </div>
-      <%= debug(params) if Rails.env.development? %>
+      
+       <%= yield %>
+      </div>
+    </div>
+    <div class="music_player"> 
+      <%= render partial: 'shared/music-player' %>
     </div>
   </body>
 </html>

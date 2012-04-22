@@ -1,5 +1,8 @@
 <li class="song_row" id="<%= song.id %>">
-<div class="song_container">
+<div class="song_container <%= if song.id.even?
+                                 "even-song"
+                               else "odd-song"
+                               end%> ">
   <div class="play_like">
     <span>
       <a class="play_button song_play not-playing"

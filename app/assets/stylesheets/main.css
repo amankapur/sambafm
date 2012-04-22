@@ -1,0 +1,33 @@
+html, body{ 
+  margin: 0; 
+  padding: 0; 
+  overflow: hidden; 
+  background-color: #283136;
+  font: 14px/16px sans-serif;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: #504A43;
+  z-index: 9999;
+}
+
+.header a {
+  font-family: 'Just Me Again Down Here', cursive;
+  
+  font-size: 5.5em;
+  color: orange;
+  position: fixed;
+  left: 300px;
+  top: 35px;
+}
+.container {
+  width: 1150px;
+  height: 1000px;
+  margin: 0px auto;
+  padding-top: 100px;
+}
+
+
