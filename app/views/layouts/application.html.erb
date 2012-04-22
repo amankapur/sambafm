@@ -11,11 +11,13 @@
     <div class="header">
       <div class="header_container">
         <a class= "logo"> ROWL </a>
+        <% if user_signed_in? %>
         <div class="tab_header">
           <div class="tabs"><p href="#"> Most Popular </p> </div>
           <div class="tabs"><p href="#"> ur10  </p></div>
           <div class="tabs"><p href="#"> Blogger's favorites </p></div>
         </div>
+      <%end%>
       </div>
     </div>
     <div class="container">
