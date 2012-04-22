@@ -1,12 +1,16 @@
 .song_table {
-  position: absolute;
+  position: relative;
 }
 .song_container {
   position: relative;
-  margin-bottom: 4px;
   width: 100%;
   float: left;
-  background-color: #877D71;
+}
+.odd-song{
+  background-color: #FFE1CC;
+}
+.even-song{
+  background-color: #FFC887;
 }
 
 
@@ -19,6 +23,8 @@
   margin-left: 5px;
 }
 
+
+
 .blog_follow, .blog_name, .song_blog {
   margin-left: 3px;
   float: right;
@@ -30,13 +36,10 @@
 }
 
 .not-playing {
-
   background-image: url("play_button_16.jpg");
-
 }
 
 .playing {
-
   background-image: url("pause_button_16.jpg");
 }
 

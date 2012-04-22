@@ -9,7 +9,7 @@
       <li><%= link_to "MyZone", library_user_path(current_user), id: "library_link", class: "nav library-nav" %>
       <ul>
         <li><%= link_to "MyStream", stream_user_path(current_user), id: "stream_link", class: "nav stream-nav" %></li>
-        <li class="blogs"><%= link_to "MyBlogs", blogs_user_path(current_user)%>
+        <li class=" blogs"><%= link_to "MyBlogs", blogs_user_path(current_user)%>
         <ul class="subnav">
           <%= render partial: 'blogs/list', locals: { blogs: current_user.followed_blogs }%>
         </ul>
