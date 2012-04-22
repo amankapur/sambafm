@@ -4,7 +4,6 @@
   height: 100%;
   border-right-style: solid;
   border-right-color: orange;
-
 }
 
 .music_player {
@@ -41,9 +40,12 @@ ul.nav-main li span {
   background-color: #283136;
 }
 
+ul.nav-main li span:hover {
+  cursor: pointer;
+}
+
 ul.nav-main li span.up:hover {
   background-position: 20px 0px;
-  cursor: pointer;
 }
 
 ul.nav-main li span.down {
@@ -52,16 +54,16 @@ ul.nav-main li span.down {
 
 ul.nav-main li span.down:hover {
   background-position: 20px -20px;
-  cursor: pointer;
 }
 
 ul.nav-main li ul.subnav {
   position: relative;
-  margin: 0; padding: 0;
   display: none;
   float: left;
-  width: 170px;
-  border: 1px solid #111;
+}
+
+ul.nav-main li ul.subnav li{
+  margin-bottom: 5px;
 }
 
 .nav {
