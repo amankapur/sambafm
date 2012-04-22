@@ -38,5 +38,10 @@ class UsersController < ApplicationController
   def blogs
     @user = User.find(params[:id])
     @blogs = @user.followed_blogs
+
+    respond_to do |format|
+      format.js { render layout: false }
+      format.html
+    end
   end
 end
