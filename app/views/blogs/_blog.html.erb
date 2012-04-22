@@ -1,5 +1,12 @@
-  <tr>
-    <td><%= link_to blog.name, blog_path(blog) %></td>
-    <td><%= blog.songs.count %></td>
-    <td><%= render partial: 'shared/follow_form', locals: { blog: blog }%></td>
-  </tr>
+<div class="blog">
+  <a href="<%= blog_path(blog) %>">
+    <div class="blog_image">
+        <%= image_tag blog.image_url, size: "300x200", alt: blog.name %>
+      <% if blog.image_url %>
+      <% else %>
+        <span><%= blog.name %></span>
+      <% end %>
+      <%= render partial: 'shared/follow_form', locals: { blog: blog }%>
+    </div>
+  </a>
+</div>
