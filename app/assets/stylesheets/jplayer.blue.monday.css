@@ -16,7 +16,7 @@
 
 div.jp-audio,
 div.jp-video {
-
+  display:none;
 	/* Edit the font-size to counteract inherited font sizing.
 	 * Eg. 1.25em = 1 / 0.8em
 	 */
@@ -28,10 +28,11 @@ div.jp-video {
 	color: #666;
 	border:1px solid #009be3;
 	background-color:#eee;
-	position:relative;
+	position:fixed;
+  top:0px;
 }
 div.jp-audio {
-	width:430px;
+	width:420px;
 }
 div.jp-video-270p {
 	width:480px;
