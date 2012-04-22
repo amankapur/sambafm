@@ -11,16 +11,23 @@ $(document).ready ->
       $("#playlist_create_link").fadeIn()
 
   $("ul.subnav").parent()
-    .append "<span> </span>"
+    .append "<span class='up'> </span>"
 
   #$("ul.nav-main li span").click(->
     #$(this).parent().find("ul.subnav").slideDown("fast").show()
   #)
   $("ul.nav-main li span").click(->
-    $(this).parent().find("ul.subnav").slideDown("fast").show()
-    $(this).parent().hover (->), ->
-      $(this).parent().find("ul.subnav").slideUp "slow"
-  ).hover (->
-    $(this).addClass "subhover"
-  ), ->
-    $(this).removeClass "subhover"
+    #$(this).parent().find("ul.subnav").slideDown("fast").show()
+    #$(this).parent().hover (->), ->
+      #$(this).parent().find("ul.subnav").slideUp "slow"
+
+    debugger
+    if $(this).hasClass('up')
+      $(this).parent().find("ul.subnav").slideDown("fast").show()
+      $(this).removeClass('up')
+      $(this).addClass('down')
+    else
+      $(this).parent().find("ul.subnav").slideUp "fast"
+      $(this).removeClass('down')
+      $(this).addClass('up')
+  )

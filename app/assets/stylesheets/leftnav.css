@@ -59,26 +59,40 @@ ul {
 }
 
 ul.nav-main li span {
-  float: left;
-  position: absolute;
-  width: 17px;
-  height: 35px;
-  background: url(subnav_btn.gif) no-repeat center top;
+  position: relative;
+  float: right;
+  /*position: absolute;*/
+  /*top: 0px;*/
+  right: 0px;
+  right: 0px;
+  height: 17px;
+  width: 20px;
+  background-image: url(arrowicons.png);
+  background-color: #283136;
+}
+
+ul.nav-main li span.up:hover {
+  background-position: 20px 0px;
+  cursor: pointer;
+}
+
+ul.nav-main li span.down {
+  background-position: 0px -20px;
+}
+
+ul.nav-main li span.down:hover {
+  background-position: 20px -20px;
+  cursor: pointer;
 }
 
 ul.nav-main li ul.subnav {
   position: relative;
-  /*left: 0px; top: 35px;*/
-  left: 20px;
-  background: #333;
   margin: 0; padding: 0;
   display: none;
   float: left;
   width: 170px;
   border: 1px solid #111;
 }
-
-ul.nav-main li span.subhover { background-position: center bottom bottom; cursor: pointer;}
 
 .nav {
   color: orange;
