@@ -12,23 +12,28 @@
       <div class="header_container">
         <a class= "logo"> ROWL </a>
         <% if user_signed_in? %>
-        <div class="tab_header">
-          <div class="tabs"><p href="#"> Most Popular </p> </div>
-          <div class="tabs"><p href="#"> ur10  </p></div>
-          <div class="tabs"><p href="#"> Blogger's favorites </p></div>
-        </div>
-      <%end%>
+          <div class="tab_header">
+            <div class="tabs"><p href="#"> Most Popular </p> </div>
+            <div class="tabs"><p href="#"> ur10  </p></div>
+            <div class="tabs"><p href="#"> Blogger's favorites </p></div>
+          </div>
+          <div class="music_player2">
+            <a href="javascript:;" class="player_prev">  </a>
+            <a href="javascript:;" class="player_play"> </a>
+            <a href="javascript:;" class="player_next"> </a>
+            <a href="javascript:;" class="player_progressbar"> </a>
+            <span class="player_currentTime"></span>
+            <span class="player_duration"></span>
+          </div>
+        <%end%>
       </div>
     </div>
     <div class="container">
       <%= render 'shared/nav' %>
       <div class="content">
-
+        <%= render partial: "shared/music-player" %>
         <%= yield %>
       </div>
-    </div>
-    <div class="music_player">
-      <%= render partial: 'shared/music-player' %>
     </div>
   </body>
 </html>
