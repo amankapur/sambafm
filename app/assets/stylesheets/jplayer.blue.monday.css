@@ -19,8 +19,8 @@ div.jp-video {
 	/* Edit the font-size to counteract inherited font sizing.
 	 * Eg. 1.25em = 1 / 0.8em
 	 */
-
-	font-size:1.25em; /* 1.25em for testing in site pages */ /* No parent CSS that can effect the size in the demos ZIP */
+	height: 20px;
+  font-size:1.25em; /* 1.25em for testing in site pages */ /* No parent CSS that can effect the size in the demos ZIP */
   
 	font-family:Verdana, Arial, sans-serif;
 	line-height:1.6;
@@ -29,7 +29,8 @@ div.jp-video {
 	background-color:#eee;
 	position:fixed;
   top:0px;
-  z-index: 
+  z-index: 99999;
+
 }
 div.jp-audio {
 	width:420px;

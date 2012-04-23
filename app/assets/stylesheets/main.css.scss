@@ -72,12 +72,14 @@ a.logo {
   height: 100%;
   float:left;
   padding-left: 81px;
-  width: 60%;
+  width: 50%;
 }
-.tab_header a{
-  text-decoration: none;
-  margin-right: 60px;
-  font-size: 1.3em;
+.tab_header p{
+  width: auto;
+  top: -20px;
+  margin: 0px;
+  padding-top: 8px;
+  vertical-align: middle;
   width: 100px;
   height: 100%;
 }
@@ -90,6 +92,17 @@ a.logo {
   width: 70%;
   right: 15%;
   left: 15%;
+}
+
+.music_player {
+  display: none;
+  position: relative;
+  top:0px;
+  width: 200px;
+  height: 100%;
+  left: -150px;
+  float: right;
+  z-index: 999999;
 }
 
 span p#link_url{
