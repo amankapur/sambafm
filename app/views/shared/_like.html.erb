@@ -1,6 +1,6 @@
 <%= form_for current_user.song_relationships.build(liked_song_id: song.id),
   remote: true do |f| %>
   <div><%= f.hidden_field :liked_song_id %></div>
-  <div class="actions "><%= f.submit "Like", 
-    :type => :image, :src => "/assets/like_button_16.jpg", :class =>"like_button" %></div>
+  <div class="actions "><%= f.submit "Like",
+    :type => :image, :src => "/assets/like.png", :class =>"like_button" %></div>
 <% end %>

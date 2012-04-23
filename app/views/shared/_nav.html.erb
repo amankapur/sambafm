@@ -1,20 +1,20 @@
 <div class="leftnav">
   <ul class="nav-main pull-right">
     <% if user_signed_in? %>
-      <li><%= link_to "Discovery", root_path, id: "logo", class: "nav home-nav", remote: true %></li>
-      <li class="all-blogs"><%= link_to "Blogs", blogs_path, class: "sub-nav blogs-nav", remote: true %></li>
-      <li><%= link_to "MyZone", library_user_path(current_user), id: "library_link", class: "nav library-nav", remote: true %></li>
-      <li><%= link_to "MyStream", stream_user_path(current_user), id: "stream_link", class: "sub-nav stream-nav", remote: true %></li>
+      <li><%= link_to "Discovery", root_path, id: "logo", class: "nav home-nav"%></li>
+      <li class="all-blogs"><%= link_to "Blogs", blogs_path, class: "sub-nav blogs-nav"%></li>
+      <li><%= link_to "MyZone", library_user_path(current_user), id: "library_link", class: "nav library-nav"%></li>
+      <li><%= link_to "MyStream", stream_user_path(current_user), id: "stream_link", class: "sub-nav stream-nav"%></li>
       <li class="blogs">
 
       <span class="arrow up" onclick="toggle_blogs()"></span>
-      <%= link_to "MyBlogs", blogs_user_path(current_user), class: "sub-nav blogs_list", remote: true %>
+      <%= link_to "MyBlogs", blogs_user_path(current_user), class: "sub-nav blogs_list"%>
 
         </li>
       <div class="my_blogs">
       <%= render partial: 'blogs/list', locals: { blogs: current_user.followed_blogs }%> </div>
       <li class="playlists">
-        <%= link_to "MyPlaylists",  playlists_user_path(current_user), id: "playlists_link", class: "sub-nav playlists-nav", remote: true %>
+        <%= link_to "MyPlaylists",  playlists_user_path(current_user), id: "playlists_link", class: "sub-nav playlists-nav"%>
         <span class="arrow up" onclick="toggle_playlists()"></span>
       </li>
       <div id="my_playlists" class="all_lists">
