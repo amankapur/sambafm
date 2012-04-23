@@ -5,8 +5,9 @@
                                end%> ">
   <div class="play_like">
     <span>
-      <a class="play_button song_play not-playing"
-        id="<%=song.stream_url%>">  </a>
+      <a class="play_button song_play not-playing" 
+        > </a>
+      <p id="link_url" type="hidden"><%= song.stream_url %> </p>
     </span>
     <a class="like_form song_like ">
       <%= render partial: 'shared/like_form', locals: { song: song } %>

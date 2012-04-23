@@ -92,8 +92,11 @@ ul li .sub-nav {
   color: white;
 }
 
-h1, a, p, h2, h3, td, th, button, input  {
+.blog_name a{
   color: black;
+}
+h1, a, p, h2, h3, td, th {
+  color: white;
 }
 
 #new_playlist, .my_blogs, #my_playlists {

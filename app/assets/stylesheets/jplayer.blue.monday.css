@@ -16,7 +16,6 @@
 
 div.jp-audio,
 div.jp-video {
-  display:none;
 	/* Edit the font-size to counteract inherited font sizing.
 	 * Eg. 1.25em = 1 / 0.8em
 	 */
