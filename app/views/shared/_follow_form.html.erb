@@ -1,4 +1,4 @@
-<div class="bfollow_<%=blog.id%>">
+<div class="bfollow_<%=blog.id%> blog_follow">
 <% if current_user.follows_blog?(blog) %>
   <%= render partial: 'shared/unfollow', locals: { blog: blog } %>
 <% else %>

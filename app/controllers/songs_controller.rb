@@ -7,8 +7,9 @@ class SongsController < ApplicationController
 
   def index
     @songs = Song.find(:all, :order => "created_at DESC")
-    
+
     respond_to do |format|
+      format.js { render layout: false }
       format.html # index.html.erb
       format.json { render json: @songs }
     end

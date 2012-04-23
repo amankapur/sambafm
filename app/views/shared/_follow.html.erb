@@ -1,5 +1,7 @@
-<%= form_for current_user.blog_followings.build(blog_id: blog.id),
-  remote: true do |f| %>
-  <div><%= f.hidden_field :blog_id %></div>
-  <div class="actions"><%= f.submit "Follow" %></div>
-<% end %>
+<div class="follow_form blog_follow">
+  <%= form_for current_user.blog_followings.build(blog_id: blog.id),
+    remote: true do |f| %>
+    <div><%= f.hidden_field :blog_id, class: "follow_input_field" %></div>
+    <div class="actions"><%= f.submit "Follow" %></div>
+  <% end %>
+</div>
