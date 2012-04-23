@@ -3,8 +3,7 @@ $(".nav-main").find(".my_blogs").html(
   "<%= escape_javascript( render partial: 'blogs/list',
                          locals: { blogs: current_user.followed_blogs })%>");
 if (my_stream.length > 0) {
-  my_stream.html("<%= escape_javascript(
-    render partial: 'shared/song_table', locals: { songs: @songs })%>");
+  my_stream.html("<%= escape_javascript(render @songs)%>");
 }
 else {
   $(".bfollow_<%=@blog.id%>").html("<%= escape_javascript( render partial: 'shared/follow', locals: { blog: @blog }) %>");

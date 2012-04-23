@@ -1,15 +1,13 @@
 <li class="song_row" id="<%= song.id %>">
 <div class="song_container <%= if song.id.even?
-                                 "even-song"
-                               else "odd-song"
-                               end%> ">
+                                 "even-song" else
+                                 "odd-song" end%> ">
   <div class="play_like">
     <span>
-      <a class="play_button song_play not-playing"
-        > </a>
+      <a class="play_button song_play not-playing"></a>
       <p id="link_url" type="hidden"><%= song.stream_url %></p>
     </span>
-    <a class="like_form song_like ">
+    <a class="like_form song_like"/>
       <%= render partial: 'shared/like_form', locals: { song: song } %>
     </a>
   </div>
@@ -18,7 +16,7 @@
       <%= song.title %>
     </div>
     <div class="song_artist">
-       by   <%= song.artist %>
+      by   <%= song.artist %>
     </div>
   </div>
   <div class="blog song_blog">

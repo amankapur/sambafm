@@ -1,2 +1,2 @@
-debugger;
-$(".content").html("<%= escape_javascript(render @songs) %>");
+$(".content").html("<ul class='song_table'><%= escape_javascript(render @songs) %></ul>");
+$(".play_button").click(init_player);

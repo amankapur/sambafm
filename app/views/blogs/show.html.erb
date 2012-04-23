@@ -1,5 +1,5 @@
 <h1><%= link_to @blog.name, @blog.url %><br /></h1>
 <%= render partial: 'shared/follow_form', locals: { blog: @blog}%>
 <div id=<%=@blog.name%>_songs>
-  <%= render partial: 'shared/song_table', locals: { songs: @songs } %>
+  <%= render @songs %>
 </div>

@@ -9,27 +9,29 @@ $(document).ready(function(){
       swfPath: "/js",
       solution: "html, flash"
     });
-    $(".play_button").click(function(){
-      var CLIENT_ID = "8d4242fa1237419ca04ec11eb51007c0";
-
-      if($(this).hasClass("not-playing"))
-      {
-        var url = $(this).parent().find("#link_url").text();
-        $("#jquery_jplayer_1").jPlayer(
-        "setMedia",{mp3: url + "?client_id=" + CLIENT_ID}).jPlayer("play");
-        $(this).removeClass("not-playing");
-        $(this).addClass("playing");
-      }
-      else if ($(this).hasClass("playing"))
-      {
-        $("#jquery_jplayer_1").jPlayer("pause");
-        $(this).removeClass("playing");
-        $(this).addClass("paused");
-      }
-      else {
-        $("#jquery_jplayer_1").jPlayer("play");
-        $(this).removeClass("paused");
-        $(this).addClass("playing");
-      }
-    });
+    $(".play_button").click(init_player);
 });
+
+var init_player = function(){
+  var CLIENT_ID = "8d4242fa1237419ca04ec11eb51007c0";
+
+  if($(this).hasClass("not-playing"))
+  {
+    var url = $(this).parent().find("#link_url").text();
+    $("#jquery_jplayer_1").jPlayer(
+    "setMedia",{mp3: url + "?client_id=" + CLIENT_ID}).jPlayer("play");
+    $(this).removeClass("not-playing");
+    $(this).addClass("playing");
+  }
+  else if ($(this).hasClass("playing"))
+  {
+    $("#jquery_jplayer_1").jPlayer("pause");
+    $(this).removeClass("playing");
+    $(this).addClass("paused");
+  }
+  else {
+    $("#jquery_jplayer_1").jPlayer("play");
+    $(this).removeClass("paused");
+    $(this).addClass("playing");
+  }
+}

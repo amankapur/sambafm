@@ -1,2 +1,3 @@
-<h1><%= @playlist.name %></h1>
-<%= render partial: 'shared/song_table', locals: { songs: @songs } %>
+<ul class="song_table">
+  <%= render @songs %>
+</ul>
