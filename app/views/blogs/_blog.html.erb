@@ -1,8 +1,8 @@
 <div class="blog">
   <a href="<%= blog_path(blog) %>">
     <div class="blog_image">
-        <%= image_tag blog.image_url, size: "300x200", alt: blog.name %>
       <% if blog.image_url %>
+        <%= image_tag blog.image_url, size: "300x200", alt: blog.name %>
       <% else %>
         <span><%= blog.name %></span>
       <% end %>
