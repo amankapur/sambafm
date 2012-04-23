@@ -1,5 +1,10 @@
 <h1><%= link_to @blog.name, @blog.url %><br /></h1>
+<% if @blog.image_url %>
+  <%= image_tag @blog.image_url, size: "300x200", alt: @blog.name %>
+<% end %>
 <%= render partial: 'shared/follow_form', locals: { blog: @blog}%>
 <div id=<%=@blog.name%>_songs>
-  <%= render @songs %>
+  <ul class="song_table">
+    <%= render @songs %>
+  </ul>
 </div>
