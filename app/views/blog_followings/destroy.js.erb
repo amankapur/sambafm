@@ -1,5 +1,5 @@
 var my_stream = $("#stream");
-$(".nav-main").find("li.blogs").find(".subnav").html(
+$(".nav-main").find(".my_blogs").html(
   "<%= escape_javascript( render partial: 'blogs/list',
                          locals: { blogs: current_user.followed_blogs })%>");
 if (my_stream.length > 0) {

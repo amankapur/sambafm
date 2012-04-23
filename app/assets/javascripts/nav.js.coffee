@@ -21,7 +21,6 @@ $(document).ready ->
     #$(@).parent().hover (->), ->
       #$(@).parent().find("ul.subnav").slideUp "slow"
 
-    debugger
     if $(@).hasClass('up')
       $(@).parent().find("ul.subnav").slideDown("fast").show()
       $(@).removeClass('up')

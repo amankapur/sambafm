@@ -1,7 +1,11 @@
 .content {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100%;
+  border-left-style: solid;
+  border-left-color: orange;
+
 }
 
 
