@@ -1,18 +1,5 @@
 #blogs_index {
   overflow: auto;
-
-  .blog {
-    position: relative;
-    float: left;
-    margin-bottom: 20px;
-    /*margin-right: 20px;*/
-    border: solid orange 5px;
-    background-color: #000;
-
-    .blog_image {
-      font-size: 200%;
-    }
-  }
 }
 
 .blog_follow {
@@ -23,4 +10,17 @@
 
 .music_player {
   display: none;
+}
+
+.blog {
+  position: relative;
+  float: left;
+  margin-bottom: 20px;
+  /*margin-right: 20px;*/
+  border: solid orange 5px;
+  background-color: #000;
+
+  .blog_image {
+    font-size: 200%;
+  }
 }
