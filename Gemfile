@@ -8,6 +8,7 @@ gem 'will_paginate', '3.0.3'
 gem 'mailcatcher'
 gem 'nokogiri'
 gem 'soundcloud'
+gem 'taps'
 
 group :test do
   gem 'annotate'
