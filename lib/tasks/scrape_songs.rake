@@ -10,8 +10,6 @@ task :scrape_songs => :environment do
            ["Sharebeast"],
   "http://thissongissick.com/blog/feed/" =>
            ["Soundcloud"],
-  "http://www.biggreenbeats.com/feed" =>
-           ["Soundcloud"],
   "http://feeds.feedburner.com/VacayWave?format=xml" =>
            ["Soundcloud"]
   
@@ -25,7 +23,7 @@ task :scrape_songs => :environment do
       #puts "creating song with id       " + song.uid
       #puts song.artist
       #puts song.title
-      #puts song.source
+      puts song.source
       
       #puts song.stream_url
 
@@ -36,7 +34,7 @@ task :scrape_songs => :environment do
         :source => song.source,
         :stream_url => song.stream_url,
         :blog => Blog.find(:first, :conditions => {:name => song.source}))
-       #puts "song created with songid    " + song.uid
+       puts "song created with songid    " + song.uid
     end
   end
   created_songs = Song.count - curr_count
